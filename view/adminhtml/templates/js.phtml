@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Ultraplugin\ChatGpt\Helper\Data $helper
+ */
+$helper = $this->helper('Ultraplugin\ChatGpt\Helper\Data');
+?>
+<script>
+    window.chatGptAjaxUrl = '<?= /* @noEscape */  $block->getUrl('up_chatgpt/index/generate') ?>';
+    window.isUpChatGptEnabled = '<?= /* @noEscape */ $helper->isEnabled() ?>';
+</script>

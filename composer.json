@@ -1,0 +1,26 @@
+{
+    "name": "ultraplugin/module-chatgpt",
+    "version": "1.0.0",
+    "description": "Magento 2 ChatGPT Generator Extension",
+    "type": "magento2-module",
+    "require": {
+        "ultraplugin/module-base": "^1.0"
+    },
+    "license": [
+        "proprietary"
+    ],
+    "authors": [
+        {
+            "name": "Ultraplugin",
+            "email": "support@ultraplugin.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ultraplugin\\ChatGpt\\": ""
+        }
+    }
+}

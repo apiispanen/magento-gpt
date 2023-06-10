@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::system">
+                    <resource id="Ultraplugin_ChatGpt::up_chatgpt" title="Ultraplugin ChatGpt AI" translate="title">
+                        <resource id="Ultraplugin_ChatGpt::actions" title="Actions" translate="title">
+                            <resource id="Ultraplugin_ChatGpt::generate" title="Generate text" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Ultraplugin_ChatGpt::configuration" title="Ultraplugin Chat GPT AI Settings" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

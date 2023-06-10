@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * UltraPlugin
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ultraplugin.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ultraplugin.com/end-user-license-agreement
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    UltraPlugin
+ * @package     Ultraplugin_ChatGpt
+ * @copyright   Copyright (c) UltraPlugin (https://ultraplugin.com/)
+ * @license     https://ultraplugin.com/end-user-license-agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="chatgpt" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>ChatGPT AI</label>
+            <tab>ultraplugin</tab>
+            <resource>Ultraplugin_ChatGpt::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_secret" translate="label" type="obscure" sortOrder="20" showInDefault="1">
+                    <label>API Secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment><![CDATA[Generate API key from <a href="https://platform.openai.com/account/api-keys">here</a>]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="attribute" translate="label" type="select" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Product Attribute</label>
+                    <comment>Generate content based on selected product attribute value</comment>
+                    <source_model>Ultraplugin\ChatGpt\Model\Config\Source\Attributes</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="description_words_count" translate="label" type="text" sortOrder="40" showInDefault="1" canRestore="1">
+                    <label>Description Word Count</label>
+                    <comment>Please enter the desired word count for generating the description. Note that higher word counts may result in longer API response times.</comment>
+                    <validate>required-entry validate-digits</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="short_description_words_count" translate="label" type="text" sortOrder="50" showInDefault="1" canRestore="1">
+                    <label>Short Description Word Count</label>
+                    <comment>Please enter the desired word count for generating the short description. Note that higher word counts may result in longer API response times.</comment>
+                    <validate>required-entry validate-digits</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
