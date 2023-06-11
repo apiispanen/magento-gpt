@@ -12,7 +12,7 @@ With our ChatGPT Extension, you can revolutionize your product descriptions, cap
 5. Page Builder Integration
 
 ## How to install Magento 2 ChatGPT
-### Install Social Login via composer (recommend)
+### Install ChatGPT via composer (recommend)
 Run the following command in Magento 2 root folder:
 
 ```
